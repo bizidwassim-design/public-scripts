@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// Attack Surface Reduction (ASR) events summary
+//
+// Counts ASR events of the last 30 days per ActionType (AsrLsassCredentialTheftBlocked,
+// AsrOfficeChildProcessAudited, ...). Gives a quick view of which ASR rules fire
+// (audit or block) before switching rules from audit to block mode.
+//
+// Author      : Wassim Bizid
+// Repository  : https://github.com/bizidwassim-design/public-scripts
+// Requires    : Microsoft Defender XDR advanced hunting (DeviceEvents)
+// Impact      : Read-only
+// License     : MIT
+// -----------------------------------------------------------------------------
+DeviceEvents
+| where Timestamp > ago(30d)
+| where ActionType startswith "Asr"
+| summarize EventCount=count() by ActionType

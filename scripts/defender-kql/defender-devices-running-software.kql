@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// Devices running a specific software (by process file name)
+//
+// Lists every device on which a given executable (default: AnyDesk.exe) was
+// launched more than once, with the most recent occurrence. Useful to find
+// unauthorised remote-access tools before blocking them.
+//
+// Author      : Wassim Bizid
+// Repository  : https://github.com/bizidwassim-design/public-scripts
+// Requires    : Microsoft Defender XDR advanced hunting (DeviceProcessEvents)
+// Impact      : Read-only
+// License     : MIT
+// -----------------------------------------------------------------------------
+// EDIT ME: change the file name to the software you are looking for
+let targetFileName = "AnyDesk.exe";
+DeviceProcessEvents
+| where FileName == targetFileName
+| summarize arg_max(Timestamp, ReportId), count() by DeviceId, DeviceName
+| where count_ > 1
+| project DeviceId, DeviceName, Timestamp, ReportId

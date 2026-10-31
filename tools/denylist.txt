@@ -1,0 +1,7 @@
+# Words that must never appear anywhere in the repository (case-insensitive). One per line.
+#
+# Committed list: generic examples only.
+# Put your own organisation's name, domains, site codes, server prefixes and vendor names in
+# tools/denylist.local.txt (git-ignored, never published). Test-Library.ps1 reads both files.
+acme-internal
+internal-only

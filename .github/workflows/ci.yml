@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  parse-and-scan:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse every script and scan for secrets / internal identifiers
+        shell: pwsh
+        run: ./tools/Test-Library.ps1
+      - name: PSScriptAnalyzer (errors only)
+        shell: pwsh
+        run: |
+          Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
+          $r = Invoke-ScriptAnalyzer -Path scripts -Recurse -Severity Error
+          $r | Format-Table -AutoSize
+          if ($r) { exit 1 }
+      - name: Catalogue is up to date
+        shell: pwsh
+        run: |
+          python tools/build_catalogue.py
+          git diff --exit-code -- docs/catalogue.md README.md

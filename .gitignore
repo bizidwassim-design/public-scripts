@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Local run output
+*.log
+*.csv
+!docs/*.csv
+
+# Local deny-list (employer-specific words) - never publish
+tools/denylist.local.txt
