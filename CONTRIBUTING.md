@@ -28,5 +28,5 @@ A new script needs a row in `docs/catalogue.csv` (`category,file,title,descripti
 ## Ground rules
 
 * No real company data, incident details, customer names or IOCs. Fictional examples only.
-* Do not add third-party code; link it from `docs/third-party.md` instead.
+* Submit only code you wrote yourself.
 * Respect the [Code of Conduct](CODE_OF_CONDUCT.md). Contributions are released under the [MIT License](LICENSE).

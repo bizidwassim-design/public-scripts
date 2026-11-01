@@ -51,8 +51,7 @@ with a least-privilege service account; `scripts/endpoint/New-ScheduledTaskFromP
   by `contoso.com`-style placeholders before publication — see [docs/sanitisation.md](docs/sanitisation.md).
 * **Scanned on every push.** `tools/Test-Library.ps1` parses every script (no execution) and fails CI if a private IP,
   a non-example e-mail, a GUID, a password literal, a token or a deny-listed word appears anywhere under `scripts/`.
-* **No third-party code.** Microsoft and community scripts that were used alongside these are linked, not copied —
-  [docs/third-party.md](docs/third-party.md).
+* **Original work.** Every script in this library was written by Wassim Bizid.
 * **No secrets, ever.** Credentials are read from the environment, a vault or an interactive prompt — never stored.
 
 ## Contributing
