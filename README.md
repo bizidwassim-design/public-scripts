@@ -64,6 +64,13 @@ Improvements, fixes and new scripts that follow the same conventions are welcome
 These scripts were written for real operational needs and are shared as-is. Read them before running them:
 several change directory objects, mailboxes or local machines. Test in a non-production environment. No warranty.
 
+## AI assistance
+
+Built with Claude Code as a coding and writing assistant, which is why it appears as a co-author on some commits.
+**Editor and reviewer: Wassim Bizid**, who set the scope, the frameworks and the GRC approach, edited the content
+and decided what was published. Automated tests in CI check the published outputs. This is a maintainer review,
+not an independent one.
+
 ## License
 
 [MIT](LICENSE).
