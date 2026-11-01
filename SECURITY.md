@@ -8,7 +8,7 @@ put a user at risk — please report it privately:
 
 1. **GitHub private vulnerability reporting** — open the *Security* tab of this repository and choose
    *Report a vulnerability*. This is the preferred channel.
-2. Or use the contact form at [brainfortsecurity.com](https://www.brainfortsecurity.com/).
+2. Or through the contact section of [my portfolio](https://bizidwassim-design.github.io/wassim-bizid-portfolio/#contact).
 
 Please do **not** open a public issue for security reports.
 
